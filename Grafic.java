@@ -5,11 +5,11 @@ public class Grafic {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int[] notasArray, asteristicos = new int[11];
+
         System.out.print("\nQuantidade de notas a serem enseridas: ");
         int quantideNotas = scanner.nextInt();
-
-        int[] notasArray = new int[quantideNotas];
-        int[] asteristicos = new int[11];
+        notasArray = new int[quantideNotas];
 
         for (int i = 0, contador = 0; i < quantideNotas; i++) {
 
@@ -44,17 +44,22 @@ public class Grafic {
 
         }
 
+        System.out.print("\n-----------Gráfico das notas-----------");
+
         for (int i = 0; i < 11; i++) {
+
             System.out.println();
             if (i == 10)
-                System.out.printf("  %d: ", i*10);
+                System.out.printf("|  %d: ", i*10);
             else
-                System.out.printf("%02d-%02d: ", i * 10, i * 10 + 9);
+                System.out.printf("|%02d-%02d: ", i * 10, i * 10 + 9);
+
             for (int j = 0; j < asteristicos[i]; j++)
                 System.out.print("*");
 
         }
-
+        System.out.println();
+        System.out.println("----------------------------------------");
     }
 
 }
